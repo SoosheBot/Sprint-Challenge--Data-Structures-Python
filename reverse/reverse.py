@@ -38,23 +38,23 @@ class LinkedList:
 
         return False
 
-    def reverse_list(self, node, previous):
+    def reverse_list(self, node, prev):
     #     #To-dos:
     #     # Initialize pointers, previous and node as None, current_node as self.head -- there is nothing in the previous or future nodes, which is why they are None, which is why we are currently in self.head
     #     # Now to iterate through linked list 
     #     ## You need to set up the next node coming up as the current-next node and what used to be the old current node becomes the previous node
     #     ## THEN the previous node becomes the current_node and the current_node becomes the next node
     #     ## The head moves to the previous node, since it's gotta travel backwards with the reversal.
-
-
-        previous = None
+        prev = None
         node = None
         current_node = self.head
 
         while current_node is not None:
             next = current_node.next_node
-            current_node.next_node = previous
-            previous = current_node
+            current_node.next_node = prev
+            prev = current_node
             current_node = next
-            self.head = previous
+            self.head = prev
+        return prev
 
+           
